@@ -24,14 +24,16 @@ are in full _lowercase_ also,  but with underscores allowed. This conflicts some
 start with a single lowercase letter indicating their 'type' 
    * 'r' : record
    * 'a' : array
+   * 'e' : enum
    * 't' : subtypes like ```t_ipnumberval is natural range o to 255``` Use of subtypes is however discouraged, unless they are really meaningful and enhance the readability  
    
-separated by an underscore from the actual name in full _lowercase_. If a Structured Element is made from other Structured Elements, the prefixes are stacked. e.g.:  
+separated by an underscore from the actual name in full _lowercase_. If a Structured Element is made from other Structured Elements, the prefixes are stacked. Arrays have their dimension added dirrecty after the ```a``` e.g.:  
    * ```r_framedoutput```
    * ```r_ipnumber```
    * ```t_ipnumberval```
-   * ```a_t_ipnumberval```
-   * ```a_r_ipnumber```
+   * ```a4_t_ipnumberval```
+   * ```a16_r_ipnumber```
+   * ```a16_a4_t_ipnumberval```
   
 The signal, port and variable names given to such Structured Elements follow the above rules. Functions to convert 'from and to' other types start with 'to_' followed by the general type of the destination, e.g.:  
    * ```to_std_logic_vector( r : r_framedoutput ) return std_logic_vector is```
